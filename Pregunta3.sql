@@ -1,4 +1,4 @@
-select jugador.nombre, apellidos, torneo.nombre from torneo ,jugador
-	join inscritos_torneo
-    on jugador.idJugador= inscritos_torneo.JUGADOR_idJugador
-	and jugador.banco is null;
+select nombre from torneo 
+	where torneo.fechaCelebracion between "20150101" and "20160101"
+    order by premio desc limit 1;
+	
