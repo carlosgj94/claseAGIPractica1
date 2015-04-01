@@ -1,0 +1,1 @@
+select idPareja from pareja;	
