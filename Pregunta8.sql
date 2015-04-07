@@ -1,7 +1,15 @@
 SELECT 
-    idPareja1, idPareja2, SUM(premio / 2)
+    idjugador, nombre, apellidos, contador
 FROM
-    partida
-WHERE
-    torneo_idtorneo IS NULL
-GROUP BY idPareja1 , idPareja2
+    jugador
+        JOIN
+    (SELECT 
+        jugador_idjugador1, jugador_idjugador2, contador
+    FROM
+        pareja
+    JOIN (SELECT 
+        pareja_idpareja, COUNT(pareja_idpareja) AS contador
+    FROM
+        juego
+    GROUP BY pareja_idpareja) AS pganadas ON pareja.idpareja = pganadas.pareja_idpareja) AS parejaG ON jugador.idjugador = parejaG.jugador_idjugador1
+        OR jugador.idjugador = parejaG.jugador_idjugador2;
