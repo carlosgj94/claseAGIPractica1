@@ -6,4 +6,4 @@ create procedure JugadoresTorneo (in CodTorneo int)
   end;
 delimiter //
 
-call JugadoresTorneo(1);
+call JugadoresTorneo(3);

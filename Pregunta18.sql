@@ -23,4 +23,4 @@ WHERE
   end;
 delimiter //
 
-call GanadorAbandono(1);
+call GanadorAbandono(5);
