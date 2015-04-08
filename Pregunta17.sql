@@ -5,4 +5,5 @@ create procedure JugadoresTorneo (in CodTorneo int)
     where torneo_idtorneo=CodTorneo;
   end;
 delimiter //
-  call JugadoresTorneo(1);
+
+call JugadoresTorneo(1);
